@@ -5,20 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <style>
+        .centar{
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tekst {
+            position: absolute;
+            left: 200px; 
+            
+        }
+        nav {
+            background-color: rgb(0, 100, 255);
+            overflow: hidden;
+            width: 200px; /* širina trake */
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: blue;
+        }
+    .grad {
+        background-image: linear-gradient(to right,blue , darkblue);
+      }
+      .pozicija {
+            top: 0;
+            right: 0;}
+    .flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+    </style>
 </head>
-<body>
-    <div class="col-sm-4">
-        <header class="container-fluid">
-            <img src="moja slika.jpg" alt="moja slika" width="250" height="300" class="img-fluid">
-
-        </header>
+<body class="grad text-light text-white">
+    <div class="col-md-12">
+        <h1 class="tekst naslov "> PORTFOLIO</h1>
     </div>
-
-    <section class="container mt-4">
-        <div class="row">
+    
+    <div>
+    <section class="container mt-4 ">
+        <img class="pozicija" src="moja slika.jpg" alt="moja slika" width="250" height="300" class="img-fluid">
+        <div class="tekst" style="justify-content: right;" class="row">
+            
             <div class="col-md-4">
                 <h2>Interesovanja</h2>
                 <p>Ovde se nalaze moja  interesovanja.</p>
+                
+                
             </div>
             <div class="col-md-4">
                 <h2>Aspiracije</h2>
@@ -27,9 +81,15 @@
             <div class="col-md-4">
                 <h2>Postignuca</h2>
                 <p>Ovde se nalaze moja Postignuca</p>
+                
             </div>
-        </div>
     </section>
+    </div>  
+
+    <nav>
+        <a href="#home">Početna</a>
+        <a href="#about">O meni</a>
+    </nav>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -15,16 +15,19 @@
 
         .tekst {
             position: absolute;
-            left: 200px; 
+            left: 200px;
         }
 
         nav {
             background-color: rgb(0, 100, 255);
             overflow: hidden;
-            width: 100%; /* Punoj širini */
+            width: 200px; /* Širina trake */
+            height: 100vh;
             position: fixed;
+            left: 0;
             top: 0;
-            z-index: 1000; /* Postavljamo visok z-index kako bismo bili sigurni da će biti iznad ostalog sadržaja */
+            display: flex;
+            flex-direction: column; /* Postavljanje orijentacije na kolonu */
         }
 
         nav a {
@@ -92,22 +95,20 @@
         <img src="moja slika.jpg" alt="moja slika" width="250" height="300" class="img-fluid">
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Početna</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">O meni</a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-dark bg-primary fixed-top left-0">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">O meni</a>
+                </li>
+            </ul>
         </div>
     </nav>
 

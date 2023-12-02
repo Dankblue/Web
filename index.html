@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
+
     <style>
-        .slika{
-            display:flex;
+        .slika {
+            display: flex;
             align-items: center;
             justify-content: right;
         }
@@ -16,16 +16,15 @@
         .tekst {
             position: absolute;
             left: 200px; 
-            
         }
+
         nav {
             background-color: rgb(0, 100, 255);
             overflow: hidden;
-            width: 200px; /* širina trake */
-            height: 100vh;
+            width: 100%; /* Punoj širini */
             position: fixed;
-            left: 0;
             top: 0;
+            z-index: 1000; /* Postavljamo visok z-index kako bismo bili sigurni da će biti iznad ostalog sadržaja */
         }
 
         nav a {
@@ -40,31 +39,25 @@
             background-color: #ddd;
             color: blue;
         }
+
         .border {
             border-radius: 25px;
             border: 2px solid #73AD21;
             padding: 20px;
             box-shadow: 5px 10px rgb(37, 37, 196);
         }
-            
-   
-        
 
-    .grad {
-        
-        background-image: linear-gradient(to right,rgb(61, 61, 255) , darkblue);
-      }
-      .pozicija {
-            right: 0;}
-    .fleks{
-        display:flex;
-        
+        .grad {
+            background-image: linear-gradient(to right, rgb(61, 61, 255), darkblue);
+        }
 
-    }
-   
+        .pozicija {
+            right: 0;
+        }
 
-
-
+        .fleks {
+            display: flex;
+        }
     </style>
 
     <script src="script.js"></script>
@@ -72,42 +65,52 @@
 </head>
 
 <body class="grad text-light text-white">
-        <div class="tekst p-4 " class="row fleks">
-            
-            <div class="row-md-4 border mb-4" >
-                
-                <h2>Interesovanja</h2>
-                <p>Moje skolovanje sam posvetio programiranju jer vidim sebe u tom poslu.
-                    <br>
-                    Pored toga, citanje knjiga, gledanje serija i igranje igrica su mi nacin za opustanje
-                </p>
-            </div>
-            <div class="row-md-4 border mb-4"  >
-                <h2>Aspiracije</h2>
-                <p>Prelazim preko problema gladajuci na pozitivnu stranu, i do sad mi je uspevalo
-                    <br>
-                    trudim se da ne odustajem i dajem sve od sebe kako bi svi bili zadovoljni
-                </p>
-            </div>
-            <div class="row-md-4 border mb-4">
-                <h2>Postignuca</h2>
-                <p>Osvojio sam prvu nagradu u timskom delu takmicenja "Most Matematike" 2023. godine
-                    <br>
-                    isao na opstinska i okruzna takmicenja u osnovnoj skoli iz tehnickog i matematike 
-                    <br>
-                    osvojio brojne medalje dok sam trenirao rukomet i plivanje
-                </p>
-            </div>
+    <div class="tekst p-4 " class="row fleks">
+
+        <div class="row-md-4 border mb-4">
+            <h2>Interesovanja</h2>
+            <p>Moje skolovanje sam posvetio programiranju jer vidim sebe u tom poslu. <br>
+                Pored toga, citanje knjiga, gledanje serija i igranje igrica su mi nacin za opustanje
+            </p>
         </div>
-     
-    <div class="slika">
-    <img src="moja slika.jpg" alt="moja slika" width="250" height="300" class="img-fluid">
+        <div class="row-md-4 border mb-4">
+            <h2>Aspiracije</h2>
+            <p>Prelazim preko problema gladajuci na pozitivnu stranu, i do sad mi je uspevalo <br>
+                trudim se da ne odustajem i dajem sve od sebe kako bi svi bili zadovoljni
+            </p>
+        </div>
+        <div class="row-md-4 border mb-4">
+            <h2>Postignuca</h2>
+            <p>Osvojio sam prvu nagradu u timskom delu takmicenja "Most Matematike" 2023. godine <br>
+                isao na opstinska i okruzna takmicenja u osnovnoj skoli iz tehnickog i matematike <br>
+                osvojio brojne medalje dok sam trenirao rukomet i plivanje
+            </p>
+        </div>
     </div>
 
-    <nav>
-        <a href="#home">Početna</a>
-        <a href="#about">O meni</a>
+    <div class="slika">
+        <img src="moja slika.jpg" alt="moja slika" width="250" height="300" class="img-fluid">
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Početna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">O meni</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

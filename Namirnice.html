@@ -31,7 +31,8 @@
             cursor: pointer;
         }
 
-        #empty-cart-button {
+        #empty-cart-button,
+        #buy-all-button {
             margin-top: 20px;
             padding: 10px;
             background-color: #ff0000;
@@ -50,6 +51,18 @@
             border-radius: 5px; 
             color: white; 
         }
+
+        .korpa-item {
+            background-color: #2ecc71;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .dugme-container {
+            margin-left: auto; /* Pomeri elemente na desnu stranu */
+        }
     </style>
 </head>
 <body>
@@ -63,42 +76,47 @@
     </div>
 </div>
 
+<button id="buy-all-button">Kupi sve</button>
 <button id="empty-cart-button">Isprazni korpu</button>
 
 <script>
 
     var namirnice = [
-        { id: 1, ime: 'Jabuke' },
-        { id: 2, ime: 'Banane' },
-        { id: 3, ime: 'Krompir' },
-        { id: 4, ime: 'Paradajz' },
-        { id: 5, ime: 'Hleb' }
+        { id: 1, ime: 'Jabuke', tip: 'Voće' },
+        { id: 2, ime: 'Banane', tip: 'Voće' },
+        { id: 3, ime: 'Krompir', tip: 'Povrće' },
+        { id: 4, ime: 'Paradajz', tip: 'Povrće' },
+        { id: 5, ime: 'Hleb', tip: 'Pekarski proizvod' }
     ];
-
 
     function prikaziNamirnice(kolonaId, namirnice) {
         var kolona = document.getElementById(kolonaId);
-        kolona.innerHTML = '<h2>' + (kolonaId === 'available-column' ? 'Sezona' : 'Korpa') + '</h2>';
+        kolona.innerHTML = '<h2>' + (kolonaId === 'available-column' ? 'Proizvodi' : 'Korpa') + '</h2>';
 
         namirnice.forEach(function (namirnica) {
             var element = document.createElement('div');
-            element.className = 'namirnica';
+            element.className = kolonaId === 'cart-column' ? 'korpa-item' : 'namirnica';
 
             var nazivNamirnice = document.createElement('span');
-            nazivNamirnice.innerHTML = namirnica.ime;
+            nazivNamirnice.innerHTML = namirnica.ime + ' - ' + namirnica.tip;
             element.appendChild(nazivNamirnice);
 
+            var dugmeContainer = document.createElement('div');
+            dugmeContainer.className = 'dugme-container'; // Koristi klasu za stilizaciju
             var dugme = document.createElement('button');
             dugme.innerText = 'Dodaj u korpu';
             dugme.addEventListener('click', function () {
                 prebaciUKorpu(namirnica);
             });
-            element.appendChild(dugme);
+
+            // Dodaj dugme na kraj reda
+            dugmeContainer.appendChild(dugme);
+
+            element.appendChild(dugmeContainer);
 
             kolona.appendChild(element);
         });
     }
-
 
     function prebaciUKorpu(namirnica) {
         var availableColumn = document.getElementById('available-column');
@@ -108,29 +126,38 @@
         cartColumn.appendChild(kreirajElement(namirnica, true));
     }
 
-  
+    function kupiSve() {
+        namirnice.forEach(function (namirnica) {
+            prebaciUKorpu(namirnica);
+        });
+    }
+
     function kreirajElement(namirnica, isInCart) {
         var element = document.createElement('div');
         element.innerHTML = namirnica.ime;
 
         if (!isInCart) {
+            var dugmeContainer = document.createElement('div');
+            dugmeContainer.className = 'dugme-container'; // Koristi klasu za stilizaciju
             var dugme = document.createElement('button');
             dugme.innerText = 'Dodaj u korpu';
             dugme.addEventListener('click', function () {
                 prebaciUKorpu(namirnica);
             });
-            element.appendChild(dugme);
+            dugmeContainer.appendChild(dugme);
+
+            element.appendChild(dugmeContainer);
         }
 
         return element;
     }
 
+    document.getElementById('buy-all-button').addEventListener('click', kupiSve);
 
     document.getElementById('empty-cart-button').addEventListener('click', function () {
         var cartColumn = document.getElementById('cart-column');
         cartColumn.innerHTML = '<h2>Korpa</h2>';
     });
-
 
     prikaziNamirnice('available-column', namirnice);
 </script>

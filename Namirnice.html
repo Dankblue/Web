@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korpa sa namirnicama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .column {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 45%;
+        }
+
+        button {
+            display: block;
+            margin: 5px auto;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #empty-cart-button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .namirnica {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="available-column" class="column">
+        <h2>Sezona</h2>
+    </div>
+    <div id="cart-column" class="column">
+        <h2>Korpa</h2>
+    </div>
+</div>
+
+<button id="empty-cart-button">Isprazni korpu</button>
+
+<script>
+
+    var namirnice = [
+        { id: 1, ime: 'Jabuke' },
+        { id: 2, ime: 'Banane' },
+        { id: 3, ime: 'Krompir' },
+        { id: 4, ime: 'Paradajz' },
+        { id: 5, ime: 'Hleb' }
+    ];
+
+
+    function prikaziNamirnice(kolonaId, namirnice) {
+        var kolona = document.getElementById(kolonaId);
+        kolona.innerHTML = '<h2>' + (kolonaId === 'available-column' ? 'Sezona' : 'Korpa') + '</h2>';
+
+        namirnice.forEach(function (namirnica) {
+            var element = document.createElement('div');
+            element.className = 'namirnica';
+
+            var nazivNamirnice = document.createElement('span');
+            nazivNamirnice.innerHTML = namirnica.ime;
+            element.appendChild(nazivNamirnice);
+
+            var dugme = document.createElement('button');
+            dugme.innerText = 'Dodaj u korpu';
+            dugme.addEventListener('click', function () {
+                prebaciUKorpu(namirnica);
+            });
+            element.appendChild(dugme);
+
+            kolona.appendChild(element);
+        });
+    }
+
+
+    function prebaciUKorpu(namirnica) {
+        var availableColumn = document.getElementById('available-column');
+        var cartColumn = document.getElementById('cart-column');
+
+        // Dodaj u kolonu "Korpa"
+        cartColumn.appendChild(kreirajElement(namirnica, true));
+    }
+
+  
+    function kreirajElement(namirnica, isInCart) {
+        var element = document.createElement('div');
+        element.innerHTML = namirnica.ime;
+
+        if (!isInCart) {
+            var dugme = document.createElement('button');
+            dugme.innerText = 'Dodaj u korpu';
+            dugme.addEventListener('click', function () {
+                prebaciUKorpu(namirnica);
+            });
+            element.appendChild(dugme);
+        }
+
+        return element;
+    }
+
+
+    document.getElementById('empty-cart-button').addEventListener('click', function () {
+        var cartColumn = document.getElementById('cart-column');
+        cartColumn.innerHTML = '<h2>Korpa</h2>';
+    });
+
+
+    prikaziNamirnice('available-column', namirnice);
+</script>
+
+</body>
+</html>

@@ -96,13 +96,12 @@
         namirnice.forEach(function (namirnica) {
             var element = document.createElement('div');
             element.className = kolonaId === 'cart-column' ? 'korpa-item' : 'namirnica';
-
             var nazivNamirnice = document.createElement('span');
             nazivNamirnice.innerHTML = namirnica.ime + ' - ' + namirnica.tip;
             element.appendChild(nazivNamirnice);
 
             var dugmeContainer = document.createElement('div');
-            dugmeContainer.className = 'dugme-container'; // Koristi klasu za stilizaciju
+            dugmeContainer.className = 'dugme-container';
             var dugme = document.createElement('button');
             dugme.innerText = 'Dodaj u korpu';
             dugme.addEventListener('click', function () {
@@ -122,7 +121,7 @@
         var availableColumn = document.getElementById('available-column');
         var cartColumn = document.getElementById('cart-column');
 
-        // Dodaj u kolonu "Korpa"
+
         cartColumn.appendChild(kreirajElement(namirnica, true));
     }
 

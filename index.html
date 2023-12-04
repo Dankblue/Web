@@ -9,10 +9,10 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
-        .slika {
-            display: flex;
-            align-items: center;
-            justify-content: right;
+
+        img{
+            left: 200px;
+            margin: 1rem;
         }
 
         .tekst {
@@ -23,28 +23,28 @@
         nav {
             background-color: rgb(0, 100, 255);
             overflow: hidden;
-            width: 200px;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
             display: flex;
-            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+            width: 100%;
+            top: 0;
         }
 
         nav a {
+            flex-grow: 1;
             display: block;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 14px 0;
             text-decoration: none;
+            transition: background-color 0.3s;
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: blue;
+            background-color: white;
+            color: black;
         }
-
         .border {
             border-radius: 25px;
             border: 2px solid #73AD21;
@@ -62,6 +62,7 @@
 
         .fleks {
             display: flex;
+
         }
 
         label {
@@ -86,10 +87,17 @@
 </head>
 
 <body class="grad text-light text-white">
+    <nav>
+        <a  href="Omeni.html"><h1>O meni</h1></a>
+        <a  href="namirnice.html"><h1>Namirnice</h1></a>
+    </nav>
+
+    <img style="margin-left: 250px; box-shadow: 5px 10px rgb(37, 37, 196); margin-top: 2rem; border:1px solid white; border-radius: 1rem;" src="moja slika.jpg" alt="moja slika" width="250" height="300">
+
     <div class="tekst p-4 " class="row fleks">
 
         
-        <div class="row-md-4 border mb-4">
+        <div class="row-md-4 border mb-4" >
             <h2>Interesovanja</h2>
             <p>Moje skolovanje sam posvetio programiranju jer vidim sebe u tom poslu. <br> Pored toga, citanje knjiga,
                 gledanje serija i igranje igrica su mi nacin za opustanje
@@ -108,6 +116,7 @@
                 dok sam trenirao rukomet i plivanje
             </p>
         </div>
+
         <section>
             
             <div class="col border mb-4 fleks " style="margin: 1rem;">
@@ -123,7 +132,7 @@
                     <label class="whitetext" for="message">Poruka:</label>
                     <textarea id="message" name="message" rows="4" cols="56" required></textarea>
                     <br>
-                    <button class="pr" type="submit">Pošalji poruku</button>
+                    <button class="pr" type="submit">Posalji poruku</button>
                 </form>
             </div>
         </section>
@@ -131,16 +140,7 @@
     </div>
 
 
-    <div class="slika fleks ">
-        <img src="moja slika.jpg" alt="moja slika" width="250" height="300">
-    </div>
-    <div>
-        <nav class="navbar navbar-dark bg-primary fixed-top left-0 navbar-expand-sm">
-            <div class="navbar-nav">
-                <a class="nav-link" href="Omeni.html">O meni</a>
-                <a class="nav-link" href="namirnice.html">Namrinice</a>
-            </div>
-        </nav>
+
     </div>
 
     <script

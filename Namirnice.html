@@ -69,7 +69,35 @@
             color: white;
             margin-bottom: 10px;
         }
+        .link-stil {
+            display: flex;
+            justify-content: center;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 1rem;
+            border-width: 5px;
+            text-decoration: none;
+            color: rgb(190, 0, 0);
+            margin: auto;
+            margin-top: 1.3rem;
+            transform-origin: center;
+        }
 
+        .link-stil:hover {
+            background-color: #f0f0f0;
+            color: rgb(190, 0, 0);
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .link-stil:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+
+        }
         .voce {
             background-color: #3498db;
         }
@@ -103,7 +131,7 @@
 </div>
 <button class="pr" id="empty-cart-button">Kupi iz korpe</button>
 <button class="pr" id="buy-all-button">Kupi sve</button>
-
+<a class="link-stil" href="index.html">Nazad</a>
 
 
 <script>
@@ -185,6 +213,6 @@
 
     prikaziNamirnice('available-column', namirnice);
 </script>
-
+    
 </body>
 </html>

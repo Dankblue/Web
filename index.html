@@ -61,10 +61,10 @@
         .fleks {
             display: flex;
         }
-
-        .email-form {
-            margin-top: 20px; /* Podešavanje razmaka između slike i forme */
+        label {
+            margin: 1rem;
         }
+
         
     </style>
 
@@ -94,35 +94,37 @@
                 osvojio brojne medalje dok sam trenirao rukomet i plivanje
             </p>
         </div>
+        <section>
+            <div class="col-md-4 border mb-4 fleks " style="margin: 1rem;">
+            <form action="#" method="post">
+                <label class="whitetext" for="name">Ime:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label class="whitetext" for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label class="whitetext" for="message">Poruka:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button class="pr" type="submit">Pošalji poruku</button>
+            </form>
+            </div>
+        </section>
+        
     </div>
 
-    <div class="slika">
+   
+    <div class="slika fleks ">
+        
         <img src="moja slika.jpg" alt="moja slika" width="250" height="300" class="img-fluid">
     </div>
-    
+    <div>
     <nav class="navbar navbar-dark bg-primary fixed-top left-0">
         <div class="navbar-nav">
             <a class="nav-link" href="Omeni.html">O meni</a>
             <a class="nav-link" href="namirnice.html">Namrinice</a>
         </div>
     </nav>
-    
-    <div class="tekst p-4 email-form" class="row fleks">
-        <!-- Email Form -->
-        <div class="row-md-4 border mb-4">
-            <h2>Kontakt</h2>
-            <form id="contactForm">
-                <div class="mb-3">
-                    <label for="emailInput" class="form-label">Email adresa:</label>
-                    <input type="email" class="form-control" id="emailInput" required>
-                </div>
-                <div class="mb-3">
-                    <label for="messageInput" class="form-label">Poruka:</label>
-                    <textarea class="form-control" id="messageInput" rows="4" required></textarea>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="sendEmail()">Pošalji</button>
-            </form>
-        </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

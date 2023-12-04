@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
         .slika {
@@ -21,13 +23,13 @@
         nav {
             background-color: rgb(0, 100, 255);
             overflow: hidden;
-            width: 200px; 
+            width: 200px;
             height: 100vh;
             position: fixed;
             left: 0;
             top: 0;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
         }
 
         nav a {
@@ -61,11 +63,22 @@
         .fleks {
             display: flex;
         }
+
         label {
             margin: 1rem;
+            text-align: right;
+            flex: 1;
         }
 
-        
+        input,
+        textarea {
+            flex: 2;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 
     <script src="script.js"></script>
@@ -77,56 +90,63 @@
 
         <div class="row-md-4 border mb-4">
             <h2>Interesovanja</h2>
-            <p>Moje skolovanje sam posvetio programiranju jer vidim sebe u tom poslu. <br>
-                Pored toga, citanje knjiga, gledanje serija i igranje igrica su mi nacin za opustanje
+            <p>Moje skolovanje sam posvetio programiranju jer vidim sebe u tom poslu. <br> Pored toga, citanje knjiga,
+                gledanje serija i igranje igrica su mi nacin za opustanje
             </p>
         </div>
         <div class="row-md-4 border mb-4">
             <h2>Aspiracije</h2>
-            <p>Prelazim preko problema gladajuci na pozitivnu stranu, i do sad mi je uspevalo. <br>
-                trudim se da ne odustajem i dajem sve od sebe kako bi svi bili zadovoljni
+            <p>Prelazim preko problema gladajuci na pozitivnu stranu, i do sad mi je uspevalo. <br> trudim se da ne
+                odustajem i dajem sve od sebe kako bi svi bili zadovoljni
             </p>
         </div>
         <div class="row-md-4 border mb-4">
             <h2>Postignuca</h2>
-            <p>Osvojio sam prvu nagradu u timskom delu takmicenja "Most Matematike" 2023. godine. <br>
-                isao na opstinska i okruzna takmicenja u osnovnoj skoli iz tehnickog i matematike. <br>
-                osvojio brojne medalje dok sam trenirao rukomet i plivanje
+            <p>Osvojio sam prvu nagradu u timskom delu takmicenja "Most Matematike" 2023. godine. <br> isao na
+                opstinska i okruzna takmicenja u osnovnoj skoli iz tehnickog i matematike. <br> osvojio brojne medalje
+                dok sam trenirao rukomet i plivanje
             </p>
         </div>
         <section>
-            <div class="col-md-4 border mb-4 fleks " style="margin: 1rem;">
-            <form action="#" method="post">
-                <label class="whitetext" for="name">Ime:</label>
-                <input type="text" id="name" name="name" required>
-    
-                <label class="whitetext" for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label class="whitetext" for="message">Poruka:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-    
-                <button class="pr" type="submit">Pošalji poruku</button>
-            </form>
+            
+            <div class="col border mb-4 fleks " style="margin: 1rem;">
+
+                <form action="#" method="post">
+                    <H2>KONTAKT</H2>
+                    <div>
+                    <label class="whitetext" for="name">Ime:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label class="whitetext" for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    </div>
+                    <label class="whitetext" for="message">Poruka:</label>
+                    <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+                    <br>
+                    <button class="pr" type="submit">Pošalji poruku</button>
+                </form>
             </div>
         </section>
-        
+
     </div>
 
-   
+
     <div class="slika fleks ">
-        
+
         <img src="moja slika.jpg" alt="moja slika" width="250" height="300" class="img-fluid">
     </div>
     <div>
-    <nav class="navbar navbar-dark bg-primary fixed-top left-0">
-        <div class="navbar-nav">
-            <a class="nav-link" href="Omeni.html">O meni</a>
-            <a class="nav-link" href="namirnice.html">Namrinice</a>
-        </div>
-    </nav>
+        <nav class="navbar navbar-dark bg-primary fixed-top left-0 navbar-expand-sm">
+            <div class="navbar-nav">
+                <a class="nav-link" href="Omeni.html">O meni</a>
+                <a class="nav-link" href="namirnice.html">Namrinice</a>
+            </div>
+        </nav>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
